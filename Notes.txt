@@ -1,0 +1,13 @@
+Konzept:
+
+- Vagrant VM
+- Ansible Config
+
+-> WebServer nginx installieren
+-> clonen unseres Repos mit allen Daten
+-> Clonen der Database direkt vom BundesGit
+-> Service einrichten, welcher jeden Tag einmal BundesGit akutaliesiert.
+-> WebApp aus unserem Repo starten und Nginx damit Konfigurieren
+-> Nötiges KonfigFile vllt direkt über unser Repo mitgeben und anschließend an ZielOrt kopieren
+
+Al dente.
