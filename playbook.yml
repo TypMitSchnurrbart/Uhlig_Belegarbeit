@@ -17,10 +17,24 @@
         src: get_gesetz.sh
         dest: /home/vagrant/
 
+
+    - name: nginx installed
+      apt: 
+        name: nginx
+        state: latest
+      notify:
+        - nginx is running
+
   handlers:
     - name: Service got updated
       service:
         name: get_gesetz
+        state: started
+        enabled: yes
+
+    - name: nginx is running
+      service:
+        name: nginx
         state: started
         enabled: yes
         
