@@ -22,7 +22,7 @@ def createJson(lawlist):
     Writes the laws and information to a json file
     param - {obj} - lawlist - Holding all laws as list of dictionarys
     """
-    with open('/home/manuel/Dokumente/Gesetze/laws.json','w+',encoding='utf-8') as fileoutput:
+    with open('/home/vagrant/laws.json','w+',encoding='utf-8') as fileoutput:
         json.dump(lawlist,fileoutput,indent=4)
 
 
@@ -36,7 +36,7 @@ def extractLawInformation(law_list):
 
 
     for lawfile in law_list:
-            with open(lawfile,'r') as s:                
+            with open(lawfile,'r', encoding="utf-8") as s:                
                 extraction = str(s.read()).split("---")
                 title,abk = extractHeaderInformation(extraction[1])
                 ausfertigung,fundstelle = extractBodyInformation(extraction[2])
@@ -95,7 +95,7 @@ def extractBodyInformation(body):
 #=====Main============================================
 def main():
     
-    path = "/home/manuel/Dokumente/Gesetze/gesetze-master/"
+    path = "/home/vagrant/gesetze"
 
     list_of_laws = []
 

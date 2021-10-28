@@ -17,13 +17,17 @@
         src: get_gesetz.sh
         dest: /home/vagrant/
 
-
     - name: nginx installed
       apt: 
         name: nginx
         state: latest
       notify:
         - nginx is running
+
+    - name: LawExtractor installed
+      copy:
+        src: LawExtractor.py
+        dest: /home/vagrant/
 
   handlers:
     - name: Service got updated
