@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
 
   # Install ansible
   config.vm.provision "shell", inline: "apt-get install ansible -y"
+  config.vm.provision "shell", inline: "apt-get install git -y"
 
   # Load the ansible playbook
   config.vm.provision "ansible_local" do |ansible|

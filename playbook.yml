@@ -1,0 +1,26 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Service File installed
+      copy:
+        src: get_gesetz.service
+        dest: /etc/systemd/system
+        owner: root
+        group: root
+      notify:
+        - Service got updated
+
+    - name: Service Script installed
+      copy:
+        src: get_gesetz.sh
+        dest: /home/vagrant/
+
+  handlers:
+    - name: Service got updated
+      service:
+        name: get_gesetz
+        state: started
+        enabled: yes
+        
