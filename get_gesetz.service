@@ -1,0 +1,10 @@
+[Unit]
+Description=Service to keep the Lawtexts uptodate by pulling the BundesGit every now and then
+
+[Service]
+User=vagrant
+ExecStart=/usr/bin/bash /home/vagrant/get_gesetz.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
