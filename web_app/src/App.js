@@ -1,26 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import SearchBar from './Search'
+import myData from './Gesetze.json'
 
 function App() {
+  console.log(myData);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          Mahlzeit du lurch!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <SearchBar />
       </header>
     </div>
   );
 }
-
+    
 export default App;
