@@ -9,11 +9,20 @@ function App() {
 
   const matches = traverse_elements(json_elements(laws), query);
   const matched_laws = lookup_matches(matches, laws);
-
+  var text = "";
+  for (let i = 0; i < matches.length; i++){
+        text += matches[i];
+        text += matched_laws[i]["title"];
+        text += matched_laws[i]["creationDate"];
+        text += matched_laws[i]["foundingPlace"];
+  }
   return (
     <div className="App">
       <header className="App-header">
       <SearchBar />
+        <ul>
+        <p>{text}</p>
+        </ul>
       </header>
     </div>
   );
@@ -38,9 +47,11 @@ function traverse_elements(keys, query){
 function lookup_matches(matches, laws){
     var acc = []
     matches.forEach(function(key){
+        console.log(laws[key]);
         acc.push(laws[key]);
     });
     return acc;
 }
+
 
 export default App;
