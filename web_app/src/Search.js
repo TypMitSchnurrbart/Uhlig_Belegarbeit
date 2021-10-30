@@ -1,5 +1,5 @@
 const SearchBar = () => (
-    <form action="/" method ="get">
+    <form action="./index.html" method ="get">
         <label htmlFor="header-search">
             <span className="visually-hidden">Gesetze: </span>
         </label>
