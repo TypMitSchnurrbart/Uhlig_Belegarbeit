@@ -29,6 +29,18 @@
         src: LawExtractor.py
         dest: /home/vagrant/
 
+    - name: nginx config loaded
+      copy:
+        src: default
+        dest: /etc/nginx/sites-available
+      notify:
+        - nginx restarted
+
+    - name: React deployed
+      copy:
+        src: web_app/build
+        dest: /var/www/html/
+
   handlers:
     - name: Service got updated
       service:
@@ -41,4 +53,9 @@
         name: nginx
         state: started
         enabled: yes
+    
+    - name: nginx restarted
+      service:
+        name: nginx
+        state: restarted
         
