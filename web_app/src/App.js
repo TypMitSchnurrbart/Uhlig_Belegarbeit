@@ -35,7 +35,8 @@ function App() {
       <header className="App-header">
       <SearchBar />
         <ul>
-        <p>{table}</p>        
+        <p>{table}</p>
+        <p>{build_table(matches)}</p>        
         </ul>
       </header>
     </div>
